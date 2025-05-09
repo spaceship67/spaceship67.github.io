@@ -6,13 +6,13 @@
     const path = window.location.pathname.substring(1); 
     const redirectUrl = decodeURIComponent(window.location.search.substring(1));
 
-    fetch("https://ipapi.co/json/")
+    fetch("https://freeipapi.com/api/json")
       .then(res => res.json())
       .then(data => {
-        const ip = data.ip;
-        const region = data.region;     
-        const country = data.country_name; 
-        const city = data.city;         
+        const ip = data.ipAddress;
+        const region = data.regionName;     
+        const country = data.countryName; 
+        const city = data.cityName;          
 
         const url = new URL("https://cors-anywhere.herokuapp.com/https://script.google.com/macros/s/AKfycbz_QtBYMqqtS299rCKmOkggT9AJNzmaph-fkwIxaXzich8AHG9Zy4ChuGYr3M5svFxf/exec");
         url.searchParams.append("ip", ip);
