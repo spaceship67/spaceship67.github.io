@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <script>
     const path = window.location.pathname.substring(1); 
-    const redirectUrl = "https://" + decodeURIComponent(path);
+    const redirectUrl = decodeURIComponent(window.location.search.substring(1));
 
     fetch("https://ipapi.co/json/")
       .then(res => res.json())
